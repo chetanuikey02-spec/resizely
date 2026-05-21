@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <title>Compress PDF Online – Reduce PDF Size Without Losing Quality</title>
+<meta name="description" content="Compress PDF files online for free. Reduce PDF file size without losing quality. Fast and secure PDF compressor.">
+
+
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+  --accent:#2563eb;
+  --accent-dark:#1e40af;
+  --bg:#f1f5f9;
+  --card:#ffffff;
+  --muted:#64748b;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans',sans-serif;
+  margin:0;
+  background:linear-gradient(135deg,#eef2ff,#f8fafc);
+  color:#0f172a;
+}
+
+/* Main Container */
+.container{
+  max-width:980px;
+  margin:32px auto;
+  padding:26px;
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(12px);
+  border-radius:18px;
+  box-shadow:0 25px 60px rgba(15,23,42,0.12);
+}
+
+/* Headings */
+h1{
+  margin:0 0 6px;
+  font-size:26px;
+  font-weight:700;
+}
+
+p.lead{
+  margin:0 0 22px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* Layout */
+.row{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+/* Cards */
+.card{
+  flex:1;
+  min-width:260px;
+  padding:20px;
+  border-radius:16px;
+  background:var(--card);
+  border:1px solid #e5e7eb;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  transition:.3s ease;
+}
+
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 40px rgba(0,0,0,0.1);
+}
+
+/* Upload Area */
+#drop{
+  padding:26px;
+  border-radius:14px;
+  background:linear-gradient(145deg,#f8fafc,#eef2ff);
+  border:2px dashed #c7d2fe;
+  cursor:pointer;
+  transition:.25s;
+}
+
+#drop:hover{
+  border-color:var(--accent);
+  background:#eef2ff;
+}
+
+#dropText{
+  font-size:15px;
+  color:#334155;
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  padding:11px 18px;
+  border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+.btn:hover{
+  opacity:.9;
+  transform:translateY(-1px);
+}
+
+label.btn{
+  background:linear-gradient(135deg,#0ea5e9,#2563eb);
+}
+
+.btn-back{
+  background:#334155;
+  color:#fff;
+  padding:9px 14px;
+  border-radius:10px;
+  border:0;
+  cursor:pointer;
+}
+
+/* Controls */
+.controls{
+  margin-top:18px;
+  display:flex;
+  gap:14px;
+  align-items:flex-end;
+  flex-wrap:wrap;
+}
+
+.controls input{
+  width:130px;
+  padding:9px;
+  border-radius:8px;
+  border:1px solid #d1d5db;
+  background:#f8fafc;
+}
+
+/* Progress */
+.progress{
+  height:12px;
+  background:#e5e7eb;
+  border-radius:999px;
+  overflow:hidden;
+  margin-top:18px;
+}
+
+.progress > div{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#2563eb,#0ea5e9);
+  transition:width .3s ease;
+}
+
+/* Text */
+.small{
+  font-size:13px;
+  color:#475569;
+}
+
+/* Download Buttons */
+#downloadLink,
+#openLink{
+  margin-top:10px;
+}
+
+/* How it works */
+.card h3{
+  margin-top:0;
+  font-size:18px;
+}
+
+.card ol{
+  padding-left:18px;
+  color:#334155;
+}
+
+footer{
+  margin-top:24px;
+  text-align:center;
+  font-size:13px;
+  color:#64748b;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  h1{font-size:22px}
+  .controls input{width:100%}
+}
+.hero{
+  background:linear-gradient(135deg,#0f3d8a,#0b5ed7);
+  padding:60px 20px;
+  border-radius:22px;
+}
+
+.hero-inner{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:40px;
+  align-items:center;
+}
+
+.hero-left h1{
+  font-size:44px;
+  color:#fff;
+  margin-bottom:30px;
+}
+
+.upload-area{
+  border:2px dashed rgba(255,255,255,0.5);
+  padding:40px;
+  border-radius:18px;
+  text-align:center;
+  color:#fff;
+  background:rgba(255,255,255,0.08);
+}
+
+.upload-btn{
+  display:inline-block;
+  margin-top:18px;
+  background:#0d6efd;
+  color:#fff;
+  padding:14px 28px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* Right card */
+.hero-right{
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 25px 60px rgba(0,0,0,0.2);
+}
+
+.hero-right h3{
+  margin-top:0;
+  color:#0b5ed7;
+}
+
+.hero-right label{
+  display:block;
+  margin-top:14px;
+  font-size:14px;
+  color:#555;
+}
+
+.hero-right input{
+  width:100%;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  margin-top:4px;
+}
+
+.main-btn{
+  width:100%;
+  margin-top:18px;
+  background:linear-gradient(135deg,#0d6efd,#0b5ed7);
+  color:#fff;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+  text-align:center;
+}
+
+/* Progress */
+.progress{
+  margin-top:16px;
+  height:10px;
+  background:#e5e7eb;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.progress div{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#0d6efd,#22c55e);
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .hero-inner{
+    grid-template-columns:1fr;
+  }
+  .hero-left h1{
+    font-size:32px;
+    text-align:center;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  
+ <nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">Resizely</div>
+
+    <div class="menu-toggle" id="menuToggle">
+      ☰
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pdf-reducer.html">PDF Tools</a></li>
+      <li><a href="image-resizer.html">Image Tools</a></li>
+      <li><a href="contact from.html">Contact</a></li>
+	
+    </ul>
+  </div>
+</nav>
+ 
+  
+<!-- ===== HERO SECTION ===== -->
+<div class="hero">
+  <div class="hero-inner">
+
+    <!-- LEFT -->
+    <div class="hero-left">
+      <h1>Resize Your PDFs <br> with Ease</h1>
+
+      <div id="drop" class="upload-area">
+        <p id="dropText">Drag & Drop PDF Files Here</p>
+        <input id="fileInput" type="file" accept="application/pdf">
+        <label for="fileInput" class="upload-btn">Upload PDF</label>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="hero-right">
+      <h3>Resize Options</h3>
+
+      <label>Target Size (KB)</label>
+      <input id="targetSize" type="number" value="200">
+
+      <label>Max Quality</label>
+      <input id="startQuality" type="number" value="90">
+
+      <label>Min Quality</label>
+      <input id="minQuality" type="number" value="30">
+
+      <button id="startBtn" class="main-btn">Resize PDF</button>
+
+      <div class="progress">
+        <div id="progBar"></div>
+      </div>
+
+      <div id="log" class="small"></div>
+
+      <a id="downloadLink" class="main-btn" style="display:none" download>
+        Download PDF
+      </a>
+      <a id="openLink" class="main-btn" target="_blank" style="display:none">
+        Preview
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<div class="ads-box">
+  Advertisement
+
+<div id="cookie-banner" class="cmp-banner">
+  <div class="cmp-content">
+    <p>
+      We use cookies to enhance your experience, show personalized ads, and analyze traffic.
+      Read our <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.
+    </p>
+    <div class="cmp-buttons">
+      <button class="btn accept" onclick="cmpAccept()">Accept All</button>
+      <button class="btn reject" onclick="cmpReject()">Reject All</button>
+      <button class="btn manage" onclick="cmpManage()">Manage Preferences</button>
+    </div>
+  </div>
+</div>
+
+
+   <footer class="premium-footer">
+  <div class="footer-box">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <h2>Resizely</h2>
+      <p>Free online Image & PDF tools for everyone.</p>
+    </div>
+
+    <!-- Image Tools -->
+    <div class="footer-links">
+      <h4>Image Tools</h4>
+      <a href="image-resizer.html">Image Resizer</a>
+      <a href="pdf-to-image.html">PDF To Image</a>
+      <a href="image-crop.html">Image Crop</a>
+      <a href="background-remover.html">Background Remover</a>
+    </div>
+
+    <!-- PDF Tools -->
+    <div class="footer-links">
+      <h4>PDF Tools</h4>
+      <a href="pdf-reducer.html">PDF Reducer-</a>
+      <a href="pdf-kb-size.html">PDF Kb Resize</a>
+      <a href="merge-pdf.html">Merge PDF</a>
+      <a href="image-to-pdf.html">Image to PDF</a>
+    </div>
+
+    <!-- Company -->
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="index.html">Home</a>
+      <a href="contact from.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Resizely.in — All Rights Reserved
+  </div>
+</footer>
+
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.10.111/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script>
+  
+  
+// Load Ads/Analytics
+function loadAdsAnalytics(){
+  // Google AdSense
+  var ads = document.createElement("script");
+  ads.async = true;
+  ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+  ads.setAttribute("data-ad-client","ca-pub-XXXXXXXXXXXXXXXX");
+  document.head.appendChild(ads);
+
+  // Google Analytics (optional)
+  var ga = document.createElement("script");
+  ga.async = true;
+  ga.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
+  document.head.appendChild(ga);
+
+  ga.onload = function(){
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  }
+}
+
+// Accept All
+function cmpAccept(){
+  localStorage.setItem("resizely_cmp","accepted");
+  document.getElementById("cookie-banner").style.display="none";
+  loadAdsAnalytics();
+}
+
+// Reject All
+function cmpReject(){
+  localStorage.setItem("resizely_cmp","rejected");
+  document.getElementById("cookie-banner").style.display="none";
+  // Do not load any tracking
+}
+
+// Manage Preferences (Example)
+function cmpManage(){
+  alert("Preferences window coming soon!");
+  // Here you can open modal for user to select Analytics / Ads separately
+}
+
+// On Page Load
+window.onload = function(){
+  let consent = localStorage.getItem("resizely_cmp");
+  if(consent === "accepted"){
+    loadAdsAnalytics();
+  }
+  if(!consent){
+    document.getElementById("cookie-banner").style.display="block";
+  }
+}
+
+
+  
+  
+  function acceptCookies(){
+  document.getElementById("cookieBox").style.display="none";
+  localStorage.setItem("cookiesAccepted","yes");
+}
+if(localStorage.getItem("cookiesAccepted")){
+  document.getElementById("cookieBox").style.display="none";
+}
+
+  
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click",()=>{
+    navLinks.classList.toggle("show");
+  });
+
+
+    const fileInput = document.getElementById('fileInput');
+    const drop = document.getElementById('drop');
+    const dropText = document.getElementById('dropText');
+    const startBtn = document.getElementById('startBtn');
+    const targetSize = document.getElementById('targetSize');
+    const startQuality = document.getElementById('startQuality');
+    const minQuality = document.getElementById('minQuality');
+    const progBar = document.getElementById('progBar');
+    const log = document.getElementById('log');
+    const downloadLink = document.getElementById('downloadLink');
+    const openLink = document.getElementById('openLink');
+
+    let file;
+
+    ;(function setupDrag(){
+      ['dragenter','dragover'].forEach(e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.style.borderColor='#0b74ff';dropText.textContent='Drop PDF here'}));
+      ['dragleave','drop'].forEach(e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.style.borderColor='#e2e8f0';dropText.textContent='PDF file drop kijiye ya "Choose PDF" par click kijiye'}));
+      drop.addEventListener('drop',ev=>{const f=ev.dataTransfer.files[0]; if(f) handleFile(f)});
+      fileInput.addEventListener('change',e=>handleFile(e.target.files[0]));
+    })();
+
+    function handleFile(f){
+      if(!f) return;
+      if(f.type !== 'application/pdf') { alert('PDF file select kijiye'); return }
+      file = f;
+      dropText.textContent = `Selected: ${f.name} — ${Math.round(f.size/1024)} KB`;
+    }
+
+    startBtn.addEventListener('click',async ()=>{
+      if(!file){alert('Pehle PDF choose kijiye');return}
+      const targetKB = Math.max(10, Math.min(300, parseInt(targetSize.value)||200));
+      const startQ = Math.max(10, Math.min(100, parseInt(startQuality.value)||90));
+      const minQ = Math.max(10, Math.min(80, parseInt(minQuality.value)||30));
+      downloadLink.style.display='none'; openLink.style.display='none';
+      log.textContent='Processing...'; progBar.style.width='0%';
+
+      try{
+        const arrayBuffer = await file.arrayBuffer();
+        const pdf = await pdfjsLib.getDocument({data:arrayBuffer}).promise;
+        log.textContent=`PDF loaded — ${pdf.numPages} pages`;
+
+        // render each page to image at a chosen scale
+        const images = [];
+        for(let i=1;i<=pdf.numPages;i++){
+          prog( (i-1)/ (pdf.numPages+2) * 100, `Rendering page ${i}/${pdf.numPages}` );
+          const page = await pdf.getPage(i);
+          const viewport = page.getViewport({scale:1.5});
+          // create canvas sized to viewport
+          const canvas = document.createElement('canvas');
+          canvas.width = Math.floor(viewport.width);
+          canvas.height = Math.floor(viewport.height);
+          const ctx = canvas.getContext('2d');
+          await page.render({canvasContext:ctx, viewport}).promise;
+          images.push(canvas);
+        }
+
+        // binary search / iterative quality decrease
+        let lowQ = minQ, highQ = startQ, bestBlob=null, bestSize=Infinity;
+        const targetBytes = targetKB * 1024;
+        const maxAttempts = 8;
+        let attempt=0;
+
+        while(attempt < maxAttempts && lowQ <= highQ){
+          const q = Math.round((lowQ+highQ)/2);
+          prog( 50 + (attempt/maxAttempts)*40, `Packing PDF (attempt ${attempt+1}) — quality ${q}` );
+          const blob = await packPdfFromCanvases(images,q);
+          const size = blob.size;
+          log.textContent = `Attempt ${attempt+1}: ${Math.round(size/1024)} KB (target ${targetKB} KB)`;
+
+          if(size <= targetBytes){
+            bestBlob = blob; bestSize = size; // try higher quality to improve
+            lowQ = q+1;
+          } else {
+            highQ = q-1;
+          }
+          attempt++;
+        }
+
+        // fallback: if bestBlob null, use lowest quality pack
+        if(!bestBlob){
+          log.textContent = `Not reached target — using min quality ${minQ}. Final size may be > ${targetKB}KB`;
+          bestBlob = await packPdfFromCanvases(images, minQ);
+          bestSize = bestBlob.size;
+        } else {
+          log.textContent = `Success — produced ${Math.round(bestSize/1024)} KB`;
+        }
+
+        prog(100,'Finished');
+        const url = URL.createObjectURL(bestBlob);
+        downloadLink.href = url; downloadLink.style.display='inline-block';
+        openLink.href = url; openLink.style.display='inline-block';
+        openLink.textContent='Preview';
+        downloadLink.textContent = `Download (${Math.round(bestSize/1024)} KB)`;
+
+      }catch(err){
+        console.error(err); alert('Error: '+err.message); log.textContent = 'Error: '+err.message;
+      }
+    });
+
+    function prog(p,txt){progBar.style.width = Math.min(100,Math.round(p))+'%'; if(txt) log.textContent = txt}
+
+    async function packPdfFromCanvases(canvases,quality){
+      // quality 10-100 -> canvas.toDataURL('image/jpeg', q/100)
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({unit:'pt',format:'a4'});
+      for(let i=0;i<canvases.length;i++){
+        const cvs = canvases[i];
+        // scale canvas image to A4 pt size while keeping aspect
+        const a4pt = {w:595.28, h:841.89}; // points
+        const imgW = cvs.width; const imgH = cvs.height;
+        const scale = Math.min(a4pt.w / imgW, a4pt.h / imgH);
+        const drawW = imgW * scale;
+        const drawH = imgH * scale;
+        const imgData = cvs.toDataURL('image/jpeg', Math.max(0.05,quality/100));
+        if(i>0) doc.addPage();
+        doc.addImage(imgData,'JPEG', (a4pt.w-drawW)/2, (a4pt.h-drawH)/2, drawW, drawH);
+      }
+      const blob = doc.output('blob');
+      return blob;
+    }
+
+  </script>
+</body>
+</html>

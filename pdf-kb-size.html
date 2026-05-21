@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reduce PDF Size in KB Online – Free PDF KB Reducer</title>
+<meta name="description" content="Reduce image size in KB online without losing quality. Free image KB reducer tool for JPG and PNG files.">
+
+
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="style.css">
+<style>
+body{
+  margin:0;
+  font-family:system-ui;
+  background:linear-gradient(135deg,#eef2ff,#f8fafc);
+}
+.hero{
+  max-width:1100px;
+  margin:40px auto;
+  background:linear-gradient(135deg,#0f3d8a,#0b5ed7);
+  padding:50px;
+  border-radius:22px;
+}
+.hero-inner{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px;
+  align-items:center;
+}
+.hero-left h1{
+  color:#fff;
+  font-size:40px;
+}
+.upload{
+  border:2px dashed rgba(255,255,255,.6);
+  padding:35px;
+  border-radius:18px;
+  text-align:center;
+  color:#fff;
+}
+.btn{
+  display:inline-block;
+  margin-top:14px;
+  padding:14px 26px;
+  background:#0d6efd;
+  color:#fff;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+}
+.hero-right{
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+input[type=number]{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+.main-btn{
+  width:100%;
+  margin-top:16px;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg,#0d6efd,#0b5ed7);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+.progress{
+  margin-top:16px;
+  height:10px;
+  background:#e5e7eb;
+  border-radius:999px;
+  overflow:hidden;
+}
+.progress div{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#0d6efd,#22c55e);
+}
+.small{font-size:13px;color:#555;margin-top:10px}
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-left h1{text-align:center;font-size:32px}
+}
+</style>
+</head>
+
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">Resizely</div>
+
+    <div class="menu-toggle" id="menuToggle">
+      ☰
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pdf-reducer.html">PDF Tools</a></li>
+      <li><a href="image-resize.html">Image Tools</a></li>
+      <li><a href="contact from.html">Contact</a></li>
+	  
+    </ul>
+  </div>
+</nav>
+
+
+<div class="hero">
+  <div class="hero-inner">
+
+    <!-- LEFT -->
+    <div class="hero-left">
+      <h1>Compress PDF<br>to Target KB</h1>
+
+      <div id="drop" class="upload">
+        <p id="dropText">Drag & Drop PDF Here</p>
+        <input id="fileInput" type="file" accept="application/pdf" hidden>
+        <label for="fileInput" class="btn">Upload PDF</label>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="hero-right">
+      <label>Target Size (KB)</label>
+      <input id="targetKB" type="number" value="200" min="10" max="300">
+
+      <button id="startBtn" class="main-btn">Compress PDF</button>
+
+      <div class="progress"><div id="progBar"></div></div>
+      <div id="log" class="small"></div>
+
+      <a id="download" class="main-btn" style="display:none" download>
+        Download Compressed PDF
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="ads-box">
+  Advertisement
+</div>
+
+
+<div id="cookie-banner" class="cmp-banner">
+  <div class="cmp-content">
+    <p>
+      We use cookies to enhance your experience, show personalized ads, and analyze traffic.
+      Read our <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.
+    </p>
+    <div class="cmp-buttons">
+      <button class="btn accept" onclick="cmpAccept()">Accept All</button>
+      <button class="btn reject" onclick="cmpReject()">Reject All</button>
+      <button class="btn manage" onclick="cmpManage()">Manage Preferences</button>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="premium-footer">
+  <div class="footer-box">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <h2>Resizely</h2>
+      <p>Free online Image & PDF tools for everyone.</p>
+    </div>
+
+    <!-- Image Tools -->
+    <div class="footer-links">
+      <h4>Image Tools</h4>
+      <a href="image-resizer.html">Image Resizer</a>
+      <a href="pdf-to-image.html">PDF To Image</a>
+      <a href="image-crop.html">Image Crop</a>
+      <a href="background-remover.html">Background Remover</a>
+    </div>
+
+    <!-- PDF Tools -->
+    <div class="footer-links">
+      <h4>PDF Tools</h4>
+      <a href="pdf-reducer.html">PDF Reducer-</a>
+      <a href="pdf-kb-size.html">PDF Kb Resize</a>
+      <a href="merge-pdf.html">Merge PDF</a>
+      <a href="image-to-pdf.html">Image to PDF</a>
+    </div>
+
+    <!-- Company -->
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="index.html">Home</a>
+      <a href="contact from.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Resizely.in — All Rights Reserved
+  </div>
+</footer>
+
+
+<script>
+
+
+// Load Ads/Analytics
+function loadAdsAnalytics(){
+  // Google AdSense
+  var ads = document.createElement("script");
+  ads.async = true;
+  ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+  ads.setAttribute("data-ad-client","ca-pub-XXXXXXXXXXXXXXXX");
+  document.head.appendChild(ads);
+
+  // Google Analytics (optional)
+  var ga = document.createElement("script");
+  ga.async = true;
+  ga.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
+  document.head.appendChild(ga);
+
+  ga.onload = function(){
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  }
+}
+
+// Accept All
+function cmpAccept(){
+  localStorage.setItem("resizely_cmp","accepted");
+  document.getElementById("cookie-banner").style.display="none";
+  loadAdsAnalytics();
+}
+
+// Reject All
+function cmpReject(){
+  localStorage.setItem("resizely_cmp","rejected");
+  document.getElementById("cookie-banner").style.display="none";
+  // Do not load any tracking
+}
+
+// Manage Preferences (Example)
+function cmpManage(){
+  alert("Preferences window coming soon!");
+  // Here you can open modal for user to select Analytics / Ads separately
+}
+
+// On Page Load
+window.onload = function(){
+  let consent = localStorage.getItem("resizely_cmp");
+  if(consent === "accepted"){
+    loadAdsAnalytics();
+  }
+  if(!consent){
+    document.getElementById("cookie-banner").style.display="block";
+  }
+}
+
+
+
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click",()=>{
+    navLinks.classList.toggle("show");
+  });
+
+
+const fileInput=document.getElementById("fileInput");
+const drop=document.getElementById("drop");
+const dropText=document.getElementById("dropText");
+const startBtn=document.getElementById("startBtn");
+const progBar=document.getElementById("progBar");
+const log=document.getElementById("log");
+const download=document.getElementById("download");
+const targetKB=document.getElementById("targetKB");
+
+let file;
+
+/* Upload */
+drop.addEventListener("dragover",e=>{e.preventDefault();});
+drop.addEventListener("drop",e=>{
+  e.preventDefault();
+  handleFile(e.dataTransfer.files[0]);
+});
+fileInput.onchange=e=>handleFile(e.target.files[0]);
+
+function handleFile(f){
+  if(!f || f.type!=="application/pdf"){
+    alert("Upload valid PDF");
+    return;
+  }
+  file=f;
+  dropText.textContent=f.name;
+}
+
+startBtn.onclick=async()=>{
+  if(!file){ alert("Upload PDF first"); return; }
+
+  progBar.style.width="0%";
+  log.textContent="Compressing PDF...";
+
+  const bytes=await file.arrayBuffer();
+  const pdf=await PDFLib.PDFDocument.load(bytes);
+
+  // Save with object streams + cleanup (basic compression)
+  const compressed=await pdf.save({
+    useObjectStreams:true,
+    compress:true
+  });
+
+  progBar.style.width="100%";
+
+  const sizeKB=(compressed.byteLength/1024).toFixed(1);
+  log.innerHTML=`Done ✔<br>Final size: <b>${sizeKB} KB</b>`;
+
+  const blob=new Blob([compressed],{type:"application/pdf"});
+  download.href=URL.createObjectURL(blob);
+  download.style.display="block";
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us - Resizely</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* Card */
+.contact-card{
+    width:100%;
+    max-width:420px;
+    background:#fff;
+    border-radius:16px;
+    padding:30px;
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+/* Logo / Title */
+.contact-card h1{
+    text-align:center;
+    color:#667eea;
+    margin-bottom:5px;
+}
+
+.contact-card p{
+    text-align:center;
+    color:#666;
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+/* Inputs */
+.input-group{
+    margin-bottom:15px;
+}
+
+.input-group input,
+.input-group textarea{
+    width:100%;
+    padding:12px 14px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    outline:none;
+    font-size:14px;
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+    border-color:#667eea;
+}
+
+/* Button */
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(102,126,234,.4);
+}
+
+/* Footer Text */
+.footer-text{
+    text-align:center;
+    margin-top:15px;
+    font-size:12px;
+    color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="contact-card">
+    <h1>Resizely</h1>
+    <p>We’d love to hear from you 🚀</p>
+
+    <form action="send.php" method="post">
+        <div class="input-group">
+            <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+
+        <div class="input-group">
+            <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+
+        <div class="input-group">
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <div class="footer-text">
+        © 2025 Resizely • Image & PDF Tools
+    </div>
+</div>
+
+</body>
+</html>

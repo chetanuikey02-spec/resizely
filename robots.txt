@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /uploads/
+Disallow: /tmp/
+
+Disallow: /send.php
+Disallow: /sitemap.php
+
+Sitemap: https://resizely.in/sitemap.xml

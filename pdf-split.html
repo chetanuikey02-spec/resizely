@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PDF -Split Converter Online – Convert PDF to splitPDF Free</title>
+<meta name="description" content="Convert PDF to Split-pdf online for free. High quality PDF to split converter tool.">
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+<style>
+.tool-card{
+  max-width:420px;
+  margin:auto;
+  background:#fff;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.tool-card h2{
+  margin-bottom:6px;
+}
+
+.tool-card p{
+  font-size:14px;
+  color:#666;
+}
+
+.tool-card input{
+  width:100%;
+  margin:10px 0;
+  padding:10px;
+}
+
+.range-box{
+  display:flex;
+  gap:10px;
+}
+
+.tool-card button{
+  width:100%;
+  padding:12px;
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.tool-card a{
+  display:block;
+  margin-top:15px;
+  color:#2563eb;
+  font-weight:600;
+}
+
+
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">Resizely</div>
+
+    <div class="menu-toggle" id="menuToggle">
+      ☰
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pdf-reducer.html">PDF Tools</a></li>
+      <li><a href="Image-resizer.html">Image Tools</a></li>
+      <li><a href="contact from.html">Contact</a></li>
+	  
+    </ul>
+  </div>
+</nav>
+<div class="tool-card">
+  <h2>PDF Split Tool</h2>
+  <p>Select page range and split your PDF</p>
+
+  <input type="file" id="pdfFile" accept="application/pdf">
+
+  <div class="range-box">
+    <input type="number" id="startPage" placeholder="Start Page">
+    <input type="number" id="endPage" placeholder="End Page">
+  </div>
+
+  <button onclick="splitPDF()">Split PDF</button>
+
+  <a id="downloadLink" style="display:none">Download Split PDF</a>
+</div>
+
+<div class="ads-box">
+  Advertisement
+</div>
+<div id="cookie-banner" class="cmp-banner">
+  <div class="cmp-content">
+    <p>
+      We use cookies to enhance your experience, show personalized ads, and analyze traffic.
+      Read our <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.
+    </p>
+    <div class="cmp-buttons">
+      <button class="btn accept" onclick="cmpAccept()">Accept All</button>
+      <button class="btn reject" onclick="cmpReject()">Reject All</button>
+      <button class="btn manage" onclick="cmpManage()">Manage Preferences</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+<footer class="premium-footer">
+  <div class="footer-box">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <h2>Resizely</h2>
+      <p>Free online Image & PDF tools for everyone.</p>
+    </div>
+
+    <!-- Image Tools -->
+    <div class="footer-links">
+      <h4>Image Tools</h4>
+      <a href="image-resizer.html">Image Resizer</a>
+      <a href="pdf-to-image.html">PDF To Image</a>
+      <a href="image-crop.html">Image Crop</a>
+      <a href="background-remover.html">Background Remover</a>
+    </div>
+
+    <!-- PDF Tools -->
+    <div class="footer-links">
+      <h4>PDF Tools</h4>
+      <a href="pdf-reducer.html">PDF Reducer-</a>
+      <a href="pdf-kb-size.html">PDF Kb Resize</a>
+      <a href="merge-pdf.html">Merge PDF</a>
+      <a href="image-to-pdf.html">Image to PDF</a>
+    </div>
+
+    <!-- Company -->
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="index.html">Home</a>
+      <a href="contact from.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Resizely.in — All Rights Reserved
+  </div>
+</footer>
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click",()=>{
+    navLinks.classList.toggle("show");
+  });
+  
+  
+  / Load Ads/Analytics
+function loadAdsAnalytics(){
+  // Google AdSense
+  var ads = document.createElement("script");
+  ads.async = true;
+  ads.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+  ads.setAttribute("data-ad-client","ca-pub-XXXXXXXXXXXXXXXX");
+  document.head.appendChild(ads);
+
+  // Google Analytics (optional)
+  var ga = document.createElement("script");
+  ga.async = true;
+  ga.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
+  document.head.appendChild(ga);
+
+  ga.onload = function(){
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  }
+}
+
+// Accept All
+function cmpAccept(){
+  localStorage.setItem("resizely_cmp","accepted");
+  document.getElementById("cookie-banner").style.display="none";
+  loadAdsAnalytics();
+}
+
+// Reject All
+function cmpReject(){
+  localStorage.setItem("resizely_cmp","rejected");
+  document.getElementById("cookie-banner").style.display="none";
+  // Do not load any tracking
+}
+
+// Manage Preferences (Example)
+function cmpManage(){
+  alert("Preferences window coming soon!");
+  // Here you can open modal for user to select Analytics / Ads separately
+}
+
+// On Page Load
+window.onload = function(){
+  let consent = localStorage.getItem("resizely_cmp");
+  if(consent === "accepted"){
+    loadAdsAnalytics();
+  }
+  if(!consent){
+    document.getElementById("cookie-banner").style.display="block";
+  }
+}
+
+
+
+
+
+function acceptCookies(){
+  document.getElementById("cookieBox").style.display="none";
+  localStorage.setItem("cookiesAccepted","yes");
+}
+if(localStorage.getItem("cookiesAccepted")){
+  document.getElementById("cookieBox").style.display="none";
+}
+
+async function splitPDF() {
+  const fileInput = document.getElementById('pdfFile');
+  const start = parseInt(document.getElementById('startPage').value);
+  const end = parseInt(document.getElementById('endPage').value);
+
+  if (!fileInput.files.length || !start || !end) {
+    alert("Please upload PDF and enter page range");
+    return;
+  }
+
+  const file = fileInput.files[0];
+  const arrayBuffer = await file.arrayBuffer();
+
+  const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+  const newPdf = await PDFLib.PDFDocument.create();
+
+  const pages = await newPdf.copyPages(
+    pdfDoc,
+    Array.from({length:end-start+1}, (_,i)=>start-1+i)
+  );
+
+  pages.forEach(p => newPdf.addPage(p));
+
+  const pdfBytes = await newPdf.save();
+  const blob = new Blob([pdfBytes], {type:'application/pdf'});
+  const url = URL.createObjectURL(blob);
+
+  const link = document.getElementById('downloadLink');
+  link.href = url;
+  link.download = "split.pdf";
+  link.style.display = "block";
+  link.innerText = "Download Split PDF";
+}
+</script>
+
+</body>
+</html>

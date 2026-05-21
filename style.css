@@ -1,0 +1,316 @@
+/* Navbar */
+.navbar{
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #e5e7eb;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.nav-container{
+  max-width:1100px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:700;
+  color:#2563eb;
+}
+
+/* Links */
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:22px;
+  margin:0;
+  padding:0;
+}
+
+.nav-links li a{
+  text-decoration:none;
+  color:#0f172a;
+  font-weight:500;
+}
+
+.nav-links li a:hover{
+  color:#2563eb;
+}
+
+/* Mobile Menu */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:60px;
+    right:20px;
+    background:white;
+    flex-direction:column;
+    width:200px;
+    padding:14px;
+    border-radius:12px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    display:none;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+}
+
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+.premium-footer {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #cbd5f5;
+  padding: 50px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-box {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer-brand h2 {
+  color: #38bdf8;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  display: block;
+  color: #cbd5f5;
+  font-size: 14px;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #38bdf8;
+}
+
+.footer-social .icons a {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 18px;
+  color: #cbd5f5;
+  transition: 0.3s;
+}
+
+.footer-social .icons a:hover {
+  color: #38bdf8;
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #1e293b;
+}
+
+
+/* ===== ADS PLACEHOLDER READY ===== */
+.ads-box{
+  margin:28px 0;
+  padding:18px;
+  background:#ffffff;
+  border:1px dashed #cbd5f5;
+  border-radius:14px;
+  text-align:center;
+  color:#64748b;
+  font-size:14px;
+}
+
+/* Mobile clean spacing */
+@media(max-width:768px){
+  .container{
+    padding:18px;
+  }
+}
+
+
+.cmp-banner{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  max-width:500px;
+  width:95%;
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 15px 35px rgba(0,0,0,.2);
+  font-family:'Segoe UI',sans-serif;
+  display:none;
+  z-index:9999;
+}
+
+.cmp-content{
+  padding:18px;
+  font-size:14px;
+  color:#333;
+}
+
+.cmp-content a{
+  color:#667eea;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.cmp-buttons{
+  display:flex;
+  justify-content:space-between;
+  margin-top:12px;
+  gap:8px;
+}
+
+.btn{
+  flex:1;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:13px;
+}
+
+.btn.accept{
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  color:#fff;
+}
+
+.btn.reject{
+  background:#eee;
+  color:#333;
+}
+
+.btn.manage{
+  background:#f0f0f0;
+  color:#667eea;
+}
+/* =====================
+   MOBILE RESPONSIVE FIX
+===================== */
+
+/* Navbar height fix */
+@media (max-width: 768px) {
+
+  body{
+    overflow-x:hidden;
+  }
+
+  .navbar{
+    padding:12px 16px;
+  }
+
+  .logo{
+    font-size:20px;
+  }
+
+  /* Menu full width tap-friendly */
+  .nav-links a{
+    font-size:16px;
+  }
+
+  /* Tools section spacing */
+  .tools-section{
+    padding:18px 14px;
+  }
+
+  .tools-title{
+    font-size:18px;
+    text-align:center;
+  }
+
+  /* Cards perfect for mobile */
+  .tools-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .tool-card{
+    padding:18px;
+  }
+
+  .tool-name{
+    font-size:15px;
+  }
+
+  .tool-desc{
+    font-size:13px;
+    line-height:1.4;
+  }
+
+  /* Ads mobile safe */
+  .ads-box{
+    margin:20px 10px;
+    font-size:13px;
+  }
+
+  /* Footer clean */
+  .premium-footer{
+    padding:35px 15px 20px;
+  }
+
+  .footer-box{
+    gap:22px;
+  }
+
+  .footer-brand h2{
+    font-size:20px;
+  }
+
+  .footer-links h4{
+    font-size:15px;
+  }
+
+  .footer-links a{
+    font-size:14px;
+  }
+
+  /* Cookie banner mobile */
+  .cmp-banner{
+    bottom:10px;
+    width:94%;
+  }
+
+  .cmp-buttons{
+    flex-direction:column;
+  }
+
+  .btn{
+    font-size:14px;
+    padding:12px;
+  }
+}
+
+

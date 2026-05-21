@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Resizely – Free Image & PDF Tools | Compress, Resize & Convert</title>
+
+<!-- SEO META -->
+<meta name="description" content="Resizely.in – Free online Image & PDF tools. Compress PDF, resize images, crop images, merge PDF and convert files instantly without quality loss.">
+<meta name="keywords" content="image resizer, pdf compress, merge pdf, image crop, pdf tools, image tools, free online tools">
+<meta name="author" content="Resizely">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://resizely.in/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Resizely – Free Image & PDF Tools Online">
+<meta property="og:description" content="Compress PDF, resize images, crop images and convert files instantly.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://resizely.in/">
+<meta property="og:image" content="https://resizely.in/og-image.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Resizely – Free Image & PDF Tools">
+<meta name="twitter:description" content="Fast & free image and PDF tools online.">
+<meta name="twitter:image" content="https://resizely.in/og-image.png">
+
+<link rel="icon" href="favicon.ico">
+
+<style>
+body{margin:0;font-family:Arial;background:#f5f5f5}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 20px;
+  background:#fff;
+  border-bottom:1px solid #e5e7eb;
+}
+.logo{font-size:22px;font-weight:bold;color:#2563eb}
+.nav-links{display:flex;gap:22px}
+.nav-links a{text-decoration:none;color:#334155;font-size:15px}
+.nav-links a:hover{color:#2563eb}
+.menu-btn{display:none;font-size:24px;cursor:pointer}
+
+@media(max-width:768px){
+.menu-btn{display:block}
+.nav-links{
+  position:absolute;top:60px;left:0;width:100%;
+  background:#fff;flex-direction:column;display:none
+}
+.nav-links a{padding:14px;border-bottom:1px solid #eee}
+.nav-links.show{display:flex}
+}
+
+/* TOOLS */
+.tools-section{padding:30px}
+.tools-title{font-size:22px;margin-bottom:15px}
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px
+}
+.tool-card{
+  background:#fff;padding:20px;border-radius:12px;
+  text-decoration:none;color:#111;border:1px solid #eee;
+  transition:.3s
+}
+.tool-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.1)}
+.tool-icon{font-size:32px}
+.tool-name{font-weight:bold;margin-top:8px}
+.tool-desc{font-size:13px;color:#555}
+
+/* ADS */
+.ads-box{
+  margin:30px;padding:20px;text-align:center;
+  border:2px dashed #cbd5f5;background:#fff;color:#64748b
+}
+
+/* FOOTER */
+footer{
+  background:#020617;color:#cbd5f5;padding:40px 20px
+}
+.footer-box{
+  max-width:1200px;margin:auto;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px
+}
+footer h4,footer h2{color:#38bdf8}
+footer a{color:#cbd5f5;text-decoration:none;font-size:14px}
+footer a:hover{color:#38bdf8}
+.footer-bottom{text-align:center;margin-top:30px;font-size:13px}
+
+/* COOKIE CMP */
+.cmp-banner{
+  position:fixed;bottom:20px;left:50%;
+  transform:translateX(-50%);
+  background:#fff;border-radius:14px;
+  max-width:480px;width:95%;
+  box-shadow:0 15px 30px rgba(0,0,0,.2);
+  display:none;z-index:9999
+}
+.cmp-content{padding:18px;font-size:14px}
+.cmp-buttons{display:flex;gap:10px;margin-top:12px}
+.cmp-buttons button{
+  flex:1;padding:10px;border:none;border-radius:10px;cursor:pointer
+}
+.accept{background:#2563eb;color:#fff}
+.reject{background:#eee}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">Resizely</div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="nav-links" id="menu">
+    <a href="index.html">Home</a>
+    <a href="image-tools.html">Image Tools</a>
+    <a href="pdf-tools.html">PDF Tools</a>
+    <a href="contact-form.html">Contact</a>
+  </div>
+</div>
+
+<!-- PDF TOOLS -->
+<div class="tools-section">
+<h1 class="tools-title">📄 PDF Tools</h1>
+<div class="tools-grid">
+<a class="tool-card" href="pdf-reducer.html"><div class="tool-icon">📉</div><div class="tool-name">Compress PDF</div><div class="tool-desc">Reduce PDF size online</div></a>
+<a class="tool-card" href="merge-pdf.html"><div class="tool-icon">🧩</div><div class="tool-name">Merge PDF</div><div class="tool-desc">Combine PDFs</div></a>
+<a class="tool-card" href="pdf-split.html"><div class="tool-icon">✂️</div><div class="tool-name">Split PDF</div><div class="tool-desc">Split pages easily</div></a>
+<a class="tool-card" href="pdf-to-image.html"><div class="tool-icon">🖼️</div><div class="tool-name">PDF to Image</div><div class="tool-desc">Convert PDF pages</div></a>
+</div>
+</div>
+
+<!-- IMAGE TOOLS -->
+<div class="tools-section">
+<h2 class="tools-title">🖼️ Image Tools</h2>
+<div class="tools-grid">
+<a class="tool-card" href="image-resizer.html"><div class="tool-icon">📐</div><div class="tool-name">Resize Image</div><div class="tool-desc">Custom image resize</div></a>
+<a class="tool-card" href="image-crop.html"><div class="tool-icon">✂️</div><div class="tool-name">Crop Image</div><div class="tool-desc">Crop images online</div></a>
+<a class="tool-card" href="image-to-pdf.html"><div class="tool-icon">📄</div><div class="tool-name">Image to PDF</div><div class="tool-desc">Convert images to PDF</div></a>
+</div>
+</div>
+
+<div class="ads-box">Advertisement</div>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="cmp-banner">
+  <div class="cmp-content">
+    We use cookies to show ads and analyze traffic.
+    <div class="cmp-buttons">
+      <button class="accept" onclick="acceptCMP()">Accept</button>
+      <button class="reject" onclick="rejectCMP()">Reject</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-box">
+<div>
+<h2>Resizely</h2>
+<p>Free Image & PDF tools online.</p>
+</div>
+<div>
+<h4>Company</h4>
+<a href="privacy.html">Privacy Policy</a><br>
+<a href="terms.html">Terms</a><br>
+<a href="contact-form.html">Contact</a>
+</div>
+</div>
+<div class="footer-bottom">© 2026 Resizely.in</div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("show");
+}
+
+function loadAds(){
+  var s=document.createElement("script");
+  s.async=true;
+  s.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+  s.setAttribute("data-ad-client","ca-pub-XXXXXXXXXXXX");
+  document.head.appendChild(s);
+}
+
+function acceptCMP(){
+  localStorage.setItem("cmp","yes");
+  document.getElementById("cookie-banner").style.display="none";
+  loadAds();
+}
+function rejectCMP(){
+  localStorage.setItem("cmp","no");
+  document.getElementById("cookie-banner").style.display="none";
+}
+
+window.onload=function(){
+  if(!localStorage.getItem("cmp")){
+    document.getElementById("cookie-banner").style.display="block";
+  }
+  if(localStorage.getItem("cmp")==="yes"){
+    loadAds();
+  }
+}
+</script>
+
+</body>
+</html>
